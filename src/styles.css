@@ -1,0 +1,426 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Huilerie (olive oil unit management)
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-card: 0 1px 2px oklch(0.3 0.04 122 / 6%), 0 8px 24px -12px oklch(0.3 0.04 122 / 18%);
+  --shadow-soft: 0 2px 10px -4px oklch(0.3 0.04 122 / 20%);
+}
+
+:root {
+  --radius: 0.85rem;
+  --background: oklch(0.965 0.014 85);
+  --foreground: oklch(0.28 0.02 120);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.28 0.02 120);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.28 0.02 120);
+  --primary: oklch(0.46 0.088 122);
+  --primary-foreground: oklch(0.98 0.01 85);
+  --primary-light: oklch(0.575 0.115 122);
+  --secondary: oklch(0.94 0.02 95);
+  --secondary-foreground: oklch(0.36 0.05 122);
+  --muted: oklch(0.955 0.012 90);
+  --muted-foreground: oklch(0.53 0.014 250);
+  --accent: oklch(0.93 0.035 100);
+  --accent-foreground: oklch(0.36 0.05 122);
+  --gold: oklch(0.755 0.072 80);
+  --gold-foreground: oklch(0.28 0.03 80);
+  --success: oklch(0.58 0.115 145);
+  --success-foreground: oklch(0.98 0.01 85);
+  --warning: oklch(0.78 0.13 75);
+  --warning-foreground: oklch(0.28 0.04 75);
+  --destructive: oklch(0.585 0.17 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(0.9 0.015 95);
+  --input: oklch(0.9 0.015 95);
+  --ring: oklch(0.575 0.115 122);
+  --chart-1: oklch(0.46 0.088 122);
+  --chart-2: oklch(0.755 0.072 80);
+  --chart-3: oklch(0.575 0.115 122);
+  --chart-4: oklch(0.58 0.115 145);
+  --chart-5: oklch(0.585 0.17 25);
+  --sidebar: oklch(0.34 0.055 122);
+  --sidebar-foreground: oklch(0.94 0.02 90);
+  --sidebar-primary: oklch(0.755 0.072 80);
+  --sidebar-primary-foreground: oklch(0.28 0.03 80);
+  --sidebar-accent: oklch(0.42 0.07 122);
+  --sidebar-accent-foreground: oklch(0.98 0.01 85);
+  --sidebar-border: oklch(0.42 0.06 122);
+  --sidebar-ring: oklch(0.755 0.072 80);
+}
+
+.dark {
+  --background: oklch(0.22 0.02 120);
+  --foreground: oklch(0.96 0.012 85);
+  --card: oklch(0.27 0.025 122);
+  --card-foreground: oklch(0.96 0.012 85);
+  --popover: oklch(0.27 0.025 122);
+  --popover-foreground: oklch(0.96 0.012 85);
+  --primary: oklch(0.63 0.12 122);
+  --primary-foreground: oklch(0.18 0.02 120);
+  --primary-light: oklch(0.72 0.12 122);
+  --secondary: oklch(0.32 0.03 122);
+  --secondary-foreground: oklch(0.96 0.012 85);
+  --muted: oklch(0.32 0.03 122);
+  --muted-foreground: oklch(0.72 0.02 100);
+  --accent: oklch(0.36 0.04 100);
+  --accent-foreground: oklch(0.96 0.012 85);
+  --gold: oklch(0.78 0.08 80);
+  --gold-foreground: oklch(0.22 0.03 80);
+  --success: oklch(0.65 0.12 145);
+  --success-foreground: oklch(0.18 0.02 120);
+  --warning: oklch(0.8 0.13 75);
+  --warning-foreground: oklch(0.22 0.04 75);
+  --destructive: oklch(0.65 0.17 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.63 0.12 122);
+  --sidebar: oklch(0.25 0.03 122);
+  --sidebar-foreground: oklch(0.94 0.02 90);
+  --sidebar-primary: oklch(0.78 0.08 80);
+  --sidebar-primary-foreground: oklch(0.22 0.03 80);
+  --sidebar-accent: oklch(0.33 0.04 122);
+  --sidebar-accent-foreground: oklch(0.96 0.012 85);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.78 0.08 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+@utility card-surface {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* Prevent double submissions while a save is in progress */
+body[data-saving] button[type="submit"] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ===== Reçu A5 — bon de réception des olives ===== */
+@page receipt-a5 {
+  size: A5 portrait;
+  margin: 8mm;
+}
+
+.receipt-a5 {
+  width: 132mm;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2mm 1mm;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.receipt-a5 .rc-header {
+  text-align: center;
+  border-bottom: 2px solid #111;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.receipt-a5 .rc-company {
+  font-weight: 700;
+  font-size: 15px;
+}
+.receipt-a5 .rc-line {
+  font-size: 10px;
+}
+.receipt-a5 .rc-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 6px 0;
+}
+.receipt-a5 .rc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.receipt-a5 .rc-section h3 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #444;
+  margin: 8px 0 2px;
+}
+.receipt-a5 .rc-section p {
+  margin: 1px 0;
+}
+.receipt-a5 .rc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.receipt-a5 .rc-table td {
+  border: 1px solid #999;
+  padding: 3px 6px;
+}
+.receipt-a5 .rc-table td:last-child {
+  text-align: right;
+}
+.receipt-a5 .rc-total td {
+  font-weight: 700;
+}
+.receipt-a5 .rc-notes {
+  margin-top: 6px;
+  font-size: 10px;
+}
+.receipt-a5 .rc-remark {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  direction: rtl;
+  color: #111;
+}
+.receipt-a5 .rc-footer {
+  text-align: center;
+  font-size: 8.5px;
+  color: #555;
+  margin-top: 14px;
+  border-top: 1px dashed #999;
+  padding-top: 4px;
+}
+
+/* Mise en page type bon Medjadja */
+.receipt-a5 .rc-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:16px; }
+.receipt-a5 .rc-brand { display:flex; gap:8px; align-items:center; }
+.receipt-a5 .rc-logo { width:16mm; height:16mm; object-fit:contain; }
+.receipt-a5 .rc-ref { text-align:right; }
+.receipt-a5 .rc-num { display:inline-block; border:1px dashed #888; border-radius:4px; padding:2px 8px; font-weight:700; font-size:11px; }
+.receipt-a5 .rc-bn { border:1px solid #999; border-radius:4px; padding:6px 10px; margin-top:4px; font-size:9px; letter-spacing:0.15em; text-align:center; min-width:42mm; }
+.receipt-a5 .rc-client { border:1px solid #999; border-radius:4px; padding:5px 8px; margin-bottom:6px; }
+.receipt-a5 .rc-client-sub { font-size:10px; color:#444; }
+.receipt-a5 .rc-grid { width:100%; border-collapse:collapse; margin-bottom:6px; }
+.receipt-a5 .rc-grid th, .receipt-a5 .rc-grid td { border:1px solid #999; padding:4px 6px; text-align:left; }
+.receipt-a5 .rc-grid th { font-size:10px; font-weight:700; }
+.receipt-a5 .rc-lines p { margin:0; }
+.receipt-a5 .rc-bullet { padding:3px 0; }
+.receipt-a5 .rc-row { display:flex; justify-content:space-between; border-bottom:1px solid #bbb; padding:3px 0; }
+.receipt-a5 .rc-strong span { font-weight:700; }
+
+/* Copie d'impression portée au niveau body : invisible à l'écran */
+.receipt-print-root {
+  display: none;
+}
+
+@media print {
+  /* N'imprimer que le reçu : masquer sidebar, menus, boutons, tableaux */
+  body.print-receipt > *:not(.receipt-print-root) {
+    display: none !important;
+  }
+  body.print-receipt .receipt-print-root {
+    display: block !important;
+    page: receipt-a5;
+  }
+}
+
+/* Bon de vente en gros : A5 paysage, fidèle au carnet papier. */
+:root { --paper: #fff; --paper-ink: #111; --paper-border: #333; --paper-soft: #e9e9e9; }
+@page wholesale-a5 { size: 210mm 148mm; margin: 6mm; }
+.wholesale-print-root { display: none; }
+.wholesale-a5 { position: relative; width: 198mm; min-height: 134mm; max-width: 100%; margin: 0 auto; padding: 3mm 4mm; color: var(--paper-ink); background: var(--paper); font-family: var(--font-sans); font-size: 11px; line-height: 1.3; overflow: hidden; box-sizing: border-box; }
+.wg-watermark { position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%); font-size: 120px; font-weight: 700; color: var(--paper-soft); pointer-events: none; z-index: 0; white-space: nowrap; }
+.wholesale-a5 > *:not(.wg-watermark) { position: relative; z-index: 1; }
+.wg-head { display: grid; grid-template-columns: 1fr 1.1fr 1.4fr; align-items: start; gap: 6px; }
+.wg-phones { font-weight: 700; font-size: 10.5px; padding-top: 4mm; }
+.wg-phones p { margin: 1px 0; }
+.wg-title { text-align: center; }
+.wg-title img { width: 13mm; height: 13mm; object-fit: contain; margin: 0 auto; }
+.wg-bon { font-family: "Brush Script MT", "Segoe Script", cursive; font-size: 24px; margin: 0; }
+.wg-bon span[lang] { font-family: var(--font-sans); font-weight: 700; }
+.wg-num { margin: 0; font-size: 13px; } .wg-num strong { color: #1d2f7a; letter-spacing: .05em; }
+.wg-ar { text-align: right; }
+.wg-ar h1 { font-size: 17px; font-weight: 800; margin: 0; }
+.wg-ar h2 { font-size: 15px; font-weight: 800; margin: 0 0 2px; }
+.wg-ar p { margin: 0; font-size: 11px; font-weight: 600; }
+.wg-meta { display: flex; justify-content: space-between; gap: 10mm; margin: 2mm 0; font-size: 12px; }
+.wg-meta p { flex: 1; margin: 0; border-bottom: 1px dotted var(--paper-border); padding-bottom: 1mm; }
+.wg-meta span { font-weight: 700; }
+.wholesale-a5 table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; border: 1.5px solid var(--paper-border); border-radius: 4mm; overflow: hidden; }
+.wholesale-a5 th, .wholesale-a5 td { border-right: 1.5px solid var(--paper-border); padding: 1.2mm 2mm; text-align: center; height: 6mm; }
+.wholesale-a5 th:last-child, .wholesale-a5 td:last-child { border-right: 0; }
+.wholesale-a5 thead th { border-bottom: 1.5px solid var(--paper-border); font-size: 13px; font-weight: 600; }
+.wholesale-a5 tbody td { border-bottom: 1px dashed #999; }
+.wholesale-a5 tbody td:nth-child(2) { text-align: left; }
+.wholesale-a5 th:nth-child(1) { width: 17%; } .wholesale-a5 th:nth-child(2) { width: 43%; } .wholesale-a5 th:nth-child(3), .wholesale-a5 th:nth-child(4) { width: 20%; }
+.wholesale-a5 td small { font-size: 9px; color: #444; }
+.wholesale-a5 tfoot th { border-top: 1.5px solid var(--paper-border); font-size: 13px; }
+.wholesale-a5 tfoot .wg-blank { border-top: 1.5px solid var(--paper-border); }
+.wholesale-a5 tr { break-inside: avoid; }
+.wg-boxes { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2mm; border: 1.5px solid var(--paper-border); }
+.wg-boxes > div { display: flex; justify-content: space-between; align-items: center; gap: 4px; padding: 1.5mm 2mm; border-left: 1.5px solid var(--paper-border); }
+.wg-boxes > div:last-child { border-left: 0; }
+.wg-boxes span { font-weight: 700; font-size: 12px; } .wg-boxes small { font-weight: 400; font-size: 9px; color: #555; margin-inline-start: 3px; }
+.wg-remark { margin: 2mm 0 0; font-size: 12.5px; font-weight: 700; text-align: right; }
+@media print {
+  body.print-wholesale > *:not(.wholesale-print-root) { display: none !important; }
+  body.print-wholesale .wholesale-print-root { display: block !important; page: wholesale-a5; }
+  body.print-wholesale { height: auto !important; min-height: 0 !important; margin: 0 !important; overflow: visible !important; }
+  html:has(body.print-wholesale) { height: auto !important; min-height: 0 !important; overflow: visible !important; }
+  .wholesale-print-root .wholesale-a5 { width: 198mm; min-height: 0; max-height: 136mm; page: wholesale-a5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.wg-preview { overflow-x: auto; background: var(--muted); padding: 8px; border-radius: 8px; }
+.wg-preview .wholesale-a5 { box-shadow: 0 2px 12px rgb(0 0 0 / .15); }
+
+/* ===== Ticket thermique 80 mm (chauffeur / POS) ===== */
+@page ticket-80 {
+  size: 80mm 200mm;
+  margin: 0;
+}
+.ticket-80 {
+  width: 72mm;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2mm;
+  background: #fff;
+  color: #000;
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.ticket-80 .tk-center { text-align: center; }
+.ticket-80 .tk-logo { width: 22mm; height: 22mm; object-fit: contain; margin: 0 auto 2px; display: block; }
+.ticket-80 .tk-title { font-weight: 700; font-size: 13px; }
+.ticket-80 .tk-sep { border-top: 1px dashed #000; margin: 4px 0; }
+.ticket-80 .tk-row { display: flex; justify-content: space-between; gap: 6px; break-inside: avoid; }
+.ticket-80 .tk-row > span { min-width: 0; overflow-wrap: anywhere; }
+.ticket-80 .tk-row > span:last-child { flex-shrink: 0; text-align: right; }
+.ticket-80 .tk-big { font-size: 14px; font-weight: 700; }
+.ticket-80.tk-showroom { overflow-wrap: anywhere; line-height: 1.2; }
+.ticket-80.tk-showroom .tk-title { text-transform: uppercase; }
+.ticket-80.tk-showroom .tk-sep { border-top-style: dotted; border-top-width: 1px; margin: 4px 0; }
+.ticket-80.tk-showroom .tk-column-head { font-weight: 700; margin-bottom: 2px; }
+.ticket-80.tk-showroom .tk-amount { flex-shrink: 0; text-align: right; }
+.ticket-80.tk-showroom .tk-thanks { font-weight: 700; text-transform: uppercase; margin: 4px 0 0; }
+.ticket-print-root { display: none; width: 80mm; }
+@media print {
+  body.print-ticket > *:not(.ticket-print-root) { display: none !important; }
+  body.print-ticket .ticket-print-root { display: block !important; page: ticket-80; }
+}
+
+/* ===== Ticket thermique 58 mm (showroom) ===== */
+@page ticket-58 {
+  size: 58mm 200mm;
+  margin: 0;
+}
+.ticket-58 .ticket-80 { width: 52mm; padding: 1mm; font-size: 10px; }
+.ticket-58 .ticket-80 .tk-logo { width: 16mm; height: 16mm; }
+.ticket-58 .ticket-80 .tk-title, .ticket-58 .ticket-80 .tk-big { font-size: 12px; }
+.ticket58-print-root { display: none; width: 58mm; }
+@media print {
+  body.print-ticket58 > *:not(.ticket58-print-root) { display: none !important; }
+  body.print-ticket58 .ticket58-print-root { display: block !important; page: ticket-58; }
+}
+
+@media print {
+  html:has(body.print-ticket), html:has(body.print-ticket58),
+  body.print-ticket, body.print-ticket58 {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .ticket-print-root, .ticket58-print-root {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .ticket-print-root { width: 80mm; }
+  .ticket58-print-root { width: 58mm; }
+  .ticket-print-root .ticket-80, .ticket58-print-root .ticket-80 {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790196907650,
+      "tag": "0000_huilerie_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790197672511,
+      "tag": "0001_validation_hardening",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790197957216,
+      "tag": "0002_server_numbering_admin_guards",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790930587748,
+      "tag": "0003_settings_auto_print_receipt",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791026594922,
+      "tag": "0004_reception_choice_caisse_emballage",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791571978616,
+      "tag": "0005_user_permissions_locks",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1791620603695,
+      "tag": "0006_driver_pos",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1791794724191,
+      "tag": "0007_showroom_pos",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792319144954,
+      "tag": "0008_showroom_gifts_wholesale",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792319653634,
+      "tag": "0009_product_photos",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792321204774,
+      "tag": "0010_stock_items_bundle_size",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792357150028,
+      "tag": "0011_showroom_pro_credit",
+      "breakpoints": true
+    }
+  ]
+}

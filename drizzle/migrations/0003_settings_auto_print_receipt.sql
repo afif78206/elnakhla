@@ -1,0 +1,2 @@
+ALTER TABLE public.settings ADD COLUMN IF NOT EXISTS auto_print_receipt boolean NOT NULL DEFAULT false;
+COMMENT ON COLUMN public.settings.auto_print_receipt IS 'Imprimer automatiquement le reçu A5 après enregistrement d''une réception';
